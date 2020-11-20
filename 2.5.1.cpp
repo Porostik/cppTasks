@@ -4,25 +4,27 @@ using namespace std;
 
 int main() {
     srand(time(0));
-    int matrix[10][2];
-    int pupilCount = 0;
+    int matrix[10][2]; // Создание исходной матрицы
+    int pupilCount = 0; // Количество групп с отличниками
 
+    // Случайное заполнение матрицы
     for(int i = 0; i < 10; i++) {
-        matrix[i][0] = 20 + 1 + rand() % 7;
-        matrix[i][1] = 1 + rand() % 6;
+        matrix[i][0] = 20 + 1 + rand() % 7; // Заполнение первого столбца матрицы
+        matrix[i][1] = 1 + rand() % 6; // Заполнение второго столбца матрицы
     }
 
     for(int i = 0; i < 10; i++) {
+        // Определение процента отличников в группе
         if(100 * matrix[i][1] / matrix[i][0] > 15) {
             cout << "В группе под номером: ";
-            cout << i + 1;
+            cout << i + 1; // Вывод номера группы
             cout << " Больше 15% отличников\n";
             pupilCount++;
         }
     }
 
     cout << "Количество групп с, где отличников больше 15%: ";
-    cout << pupilCount << endl;
+    cout << pupilCount << endl; // Вывод колиства групп с отличниками
 
     return 0;
 }

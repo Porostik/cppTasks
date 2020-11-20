@@ -2,8 +2,9 @@
 
 using namespace std;
 
+// Умножение элементов массива заданое количество раз
 int getMultiply(int arr1[], int arr2[], int currentIndex) {
-    int result = 1;
+    int result = 1; // Результат умножения
 
     for(int j = 0; j <= currentIndex; j++) {
         result = result * (arr1[j] + arr2[j]); 
@@ -25,7 +26,7 @@ int getMultiply(int arr1[], int arr2[], int currentIndex) {
 //     return resultArr;
 // }
 
-//Создание массива случайных чисел от 1 до 20
+//Создание массива случайных чисел от -10 до 20
 int* createArray(int arrayLength) {
     int* resultArr = new int[arrayLength];
     for(int i = 0; i < arrayLength; i++) {
@@ -39,21 +40,17 @@ int* createArray(int arrayLength) {
 
 int main() {   
     srand(time(NULL));
-    int arrayLength;
-    int result = 0;
+    int arrayLength; // Длинна массива
+    int result = 0; // Наименьший среди результатов умножения
     
+    // Задание длинны массивов
     cout << "Введите длину массивов\n";
     cin >> arrayLength;
-    int* arr1 = createArray(arrayLength);
-    int* arr2 = createArray(arrayLength);
-
-    for(int i = 0; i < arrayLength; i++) {
-        cout << arr1[i];
-        cout << " - ";
-        cout << arr2[i] << endl;
-    }
+    int* arr1 = createArray(arrayLength); // Создание первого массива
+    int* arr2 = createArray(arrayLength); // Создание второго массива
 
     for(int m = 0; m < arrayLength; m++) {
+        // Результат для текущего индекса
         int resultForCurrentIndex = getMultiply(arr1, arr2, m);
         if(m == 0) {
             result = resultForCurrentIndex;
