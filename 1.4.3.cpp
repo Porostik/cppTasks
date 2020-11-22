@@ -49,6 +49,21 @@ int main() {
     int* arr1 = createArray(arrayLength); // Создание первого массива
     int* arr2 = createArray(arrayLength); // Создание второго массива
 
+    cout << "Изначальные массивы: \n";
+    for(int i = 0; i < arrayLength; i++) {
+        cout << arr1[i] << " ";
+    }
+
+    cout << "\n";
+
+    cout << "------------------------\n";
+
+    for(int i = 0; i < arrayLength; i++) {
+        cout << arr2[i] << " ";
+    }
+
+    cout << "\n";
+
     for(int m = 0; m < arrayLength; m++) {
         // Результат для текущего индекса
         int resultForCurrentIndex = getMultiply(arr1, arr2, m);
@@ -61,6 +76,7 @@ int main() {
         }
     }
 
+    cout << "Наименьшее среди произведений:" << endl;
     cout << result << endl;
 
     return 0;
