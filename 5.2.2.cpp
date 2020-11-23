@@ -72,11 +72,20 @@ int main() {
     
     cout << "Результат: \n"; 
 
+    int findedShops = 0;
+
     for(int i = 0; i < shopsCount; i++) {
         if(shops[i].workTime.closingHour > 18) {
             cout << shops[i].name << "     " << shops[i].area << "    ";
             cout << shops[i].workTime.openingHour << "-" << shops[i].workTime.closingHour << endl;
+            findedShops++;
         }
+    }
+
+    if(findedShops < 1) {
+        cout << "Магазинов которые работают после 18 часов не найдено\n";
+    } else {
+        cout << "Число магазинов которые, работают после 18 часов: " << findedShops << endl;
     }
 
     return 0;
